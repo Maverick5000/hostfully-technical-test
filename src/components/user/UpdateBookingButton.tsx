@@ -3,29 +3,46 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalHeader,
-  RangeCalendar,
   useDisclosure,
 } from "@nextui-org/react";
-import { memo, useState } from "react";
-import { parseDate } from "@internationalized/date";
-import formatDate from "../../utils/formatDate";
+import { memo, useCallback } from "react";
 import { Booking } from "../../types/Booking";
-import { UpdateBooking } from "../../hooks/useUpdateBooking";
+import BookForm from "../home/BookForm";
+import toast from "../../utils/toast";
+import validateOverlap from "../../utils/validateOverlap";
+import useGetUserBookings from "../../hooks/useGetUserBookings";
 
 const UpdateBookingButton = ({
   booking,
   submit,
 }: {
   booking: Booking;
-  submit: ({ bookingId, startDate, endDate }: UpdateBooking) => void;
+  submit: ({
+    id,
+    email,
+    firstName,
+    lastName,
+    startDate,
+    endDate,
+  }: Omit<Booking, "propertyId">) => void;
 }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [value, setValue] = useState({
-    start: parseDate(booking.startDate),
-    end: parseDate(booking.endDate),
-  });
+  const { data: bookings } = useGetUserBookings();
+
+  const handleSubmit = useCallback(
+    (data: Omit<Booking, "propertyId" | "id">, onClose: () => void) => {
+      const updatedBooking = { id: booking.id, ...data };
+      if (validateOverlap(updatedBooking, bookings)) {
+        toast.error("You already have a booking on those dates.");
+        return;
+      }
+      submit(updatedBooking);
+      onClose();
+      toast.info("Booking updated successfully.");
+    },
+    [bookings, submit, booking.id],
+  );
 
   return (
     <>
@@ -33,6 +50,7 @@ const UpdateBookingButton = ({
         Update
       </Button>
       <Modal
+        size="5xl"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         placement="center"
@@ -65,32 +83,14 @@ const UpdateBookingButton = ({
                 Select the new dates for your booking
               </ModalHeader>
               <ModalBody>
-                <RangeCalendar
-                  aria-label="Date (Controlled)"
-                  value={value}
-                  onChange={setValue}
+                <BookForm
+                  onClose={onClose}
+                  initialValues={booking}
+                  onSubmit={(data: Omit<Booking, "propertyId" | "id">) =>
+                    handleSubmit(data, onClose)
+                  }
                 />
-                <p>{`From: ${formatDate(value.start.toString())}`}</p>
-                <p>{`To: ${formatDate(value.end.toString())}`}</p>
               </ModalBody>
-              <ModalFooter>
-                <Button color="danger" onPress={onClose}>
-                  Close
-                </Button>
-                <Button
-                  color="success"
-                  onPress={() => {
-                    submit({
-                      bookingId: booking.id,
-                      startDate: value.start.toString(),
-                      endDate: value.end.toString(),
-                    });
-                    onClose();
-                  }}
-                >
-                  Update
-                </Button>
-              </ModalFooter>
             </>
           )}
         </ModalContent>

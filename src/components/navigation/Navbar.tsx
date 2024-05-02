@@ -10,8 +10,10 @@ import {
 } from "@nextui-org/react";
 import { memo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useGetUserBookings from "../../hooks/useGetUserBookings";
 
 const Navbar = () => {
+  const { data: bookings } = useGetUserBookings();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const menuItems = ["My Bookings"];
@@ -43,7 +45,7 @@ const Navbar = () => {
             className="text-white cursor-pointer"
             onPress={() => navigate("/bookings")}
           >
-            My Bookings
+            My Bookings {bookings ? `(${bookings.length})` : ""}
           </Link>
         </NavbarItem>
       </NavbarContent>

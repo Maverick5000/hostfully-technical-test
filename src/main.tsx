@@ -7,6 +7,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import Home from "./components/home/Home";
 import "./styles/global.css";
 import BookingsGrid from "./components/user/BookingsGrid";
+import { ToastContainer } from "react-toastify";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <NextUIProvider>
         <RouterProvider router={router} />
+        <ToastContainer />
       </NextUIProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
