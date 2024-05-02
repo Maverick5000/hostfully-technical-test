@@ -9,13 +9,13 @@ This project is a React application built with Yarn for package management, Jest
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/Maverick5000/hostfully-technical-test.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd your-project/
+cd hostfully-technical-test/
 ```
 
 3. Install dependencies using Yarn:
