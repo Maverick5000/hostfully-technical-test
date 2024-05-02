@@ -9,7 +9,7 @@ const BookingsGrid = ({
   userBookings?: boolean;
 }) => {
   return (
-    <div className="bg-slate-100 p-4 grid grid-cols-1 lg:grid-cols-5 sm:grid-cols-2 gap-4 overflow-y-auto overflow-x-hidden">
+    <div className="bg-slate-100 p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 overflow-y-auto overflow-x-hidden">
       {properties?.map((property: Property) => (
         <PropertyCard key={property.id} property={property} />
       ))}

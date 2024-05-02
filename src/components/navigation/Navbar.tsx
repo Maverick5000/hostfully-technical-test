@@ -32,6 +32,7 @@ const Navbar = () => {
         />
         <NavbarBrand>
           <Link
+            data-testid="home-link"
             className="text-white cursor-pointer"
             onPress={() => navigate("/")}
           >
@@ -40,9 +41,10 @@ const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
+        <NavbarItem className="flex">
           <Link
-            className="text-white cursor-pointer"
+            data-testid="my-bookings-link"
+            className="text-white cursor-pointer hidden md:flex"
             onPress={() => navigate("/bookings")}
           >
             My Bookings {bookings ? `(${bookings.length})` : ""}

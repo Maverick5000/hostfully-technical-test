@@ -19,7 +19,12 @@ const CancelBookingButton = ({ bookingId }: { bookingId: string }) => {
       showArrow={true}
     >
       <PopoverTrigger>
-        <Button color="danger" radius="full" size="sm">
+        <Button
+          data-testid="cancel-booking-button"
+          color="danger"
+          radius="full"
+          size="sm"
+        >
           Cancel
         </Button>
       </PopoverTrigger>
@@ -42,6 +47,7 @@ const CancelBookingButton = ({ bookingId }: { bookingId: string }) => {
               color="success"
               radius="full"
               size="sm"
+              data-testid="cancel-booking-submit-button"
             >
               Yes
             </Button>

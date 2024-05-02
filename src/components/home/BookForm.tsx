@@ -96,7 +96,7 @@ const BookForm = ({
         <Button color="danger" onPress={onClose}>
           Close
         </Button>
-        <Button type="submit" color="success">
+        <Button data-testid="submit-book-button" type="submit" color="success">
           Book
         </Button>
       </div>

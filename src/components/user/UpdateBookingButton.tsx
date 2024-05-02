@@ -46,7 +46,13 @@ const UpdateBookingButton = ({
 
   return (
     <>
-      <Button onPress={onOpen} color="warning" radius="full" size="sm">
+      <Button
+        data-testid="update-booking-button"
+        onPress={onOpen}
+        color="warning"
+        radius="full"
+        size="sm"
+      >
         Update
       </Button>
       <Modal

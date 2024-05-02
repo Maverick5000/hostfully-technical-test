@@ -1,3 +1,8 @@
+/**
+ * @param {string} date
+ * @returns {string}
+ * @description format the date from yyyy-mm-dd to Month day, year
+ */
 const formatDate = (date: string): string => {
   const dateObj = new Date(date + "T00:00:00");
 

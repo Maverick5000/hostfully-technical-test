@@ -10,7 +10,7 @@ const BookingsGrid = () => {
   const { data: bookings } = useGetUserBookings();
   const { data: properties } = useGetProperties();
 
-  const mapBookings = bookings?.map((booking: Booking) => {
+  const mappedBookings = bookings?.map((booking: Booking) => {
     const property = properties.find(
       (property: Property) => property.id === booking.propertyId,
     );
@@ -24,8 +24,8 @@ const BookingsGrid = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-slate-100 p-4 grid grid-cols-1 lg:grid-cols-5 sm:grid-cols-2 gap-4 overflow-y-auto overflow-x-hidden">
-        {mapBookings}
+      <div className="bg-slate-100 p-4 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-5 sm:grid-cols-2 gap-4 overflow-y-auto overflow-x-hidden">
+        {mappedBookings}
       </div>
     </>
   );

@@ -22,7 +22,7 @@ const BookingInfo = ({
       <PropertyCard property={property} isBooked />
       <Card
         isBlurred
-        className="mt-2 border-none bg-gradient-to-tr from-primary to-secondary"
+        className="mt-2 border-none bg-gradient-to-tr from-primary to-secondary w-full sm:max-w-[400px]"
         shadow="sm"
       >
         <CardBody className="text-white flex flex-row justify-between items-center">

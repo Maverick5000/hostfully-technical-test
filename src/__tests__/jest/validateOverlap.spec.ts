@@ -1,4 +1,4 @@
-import validateOverlap from "../utils/validateOverlap";
+import validateOverlap from "../../utils/validateOverlap";
 
 describe("validateOverlap function", () => {
   it("Returns true for overlapping bookings", () => {

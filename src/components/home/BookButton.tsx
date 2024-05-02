@@ -35,7 +35,13 @@ const BookButton = ({ propertyId }: { propertyId: string }) => {
 
   return (
     <>
-      <Button onPress={onOpen} color="primary" radius="full" size="sm">
+      <Button
+        data-testid="book-button"
+        onPress={onOpen}
+        color="primary"
+        radius="full"
+        size="sm"
+      >
         Book now
       </Button>
       <Modal
