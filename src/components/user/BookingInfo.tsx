@@ -27,12 +27,14 @@ const BookingInfo = ({
       >
         <CardBody className="text-white flex flex-row justify-between items-center">
           <div>
+            <p>Guest: {`${booking.firstName} ${booking.lastName}`}</p>
+            <p>Email: {booking.email}</p>
             <p>From: {formatDate(booking.startDate)}</p>
             <p>To: {formatDate(booking.endDate)}</p>
           </div>
-          <div className="flex flex-row gap-1">
-            <CancelBookingButton bookingId={booking.id} />
+          <div className="flex flex-col gap-2">
             <UpdateBookingButton booking={booking} submit={updateBooking} />
+            <CancelBookingButton bookingId={booking.id} />
           </div>
         </CardBody>
       </Card>
