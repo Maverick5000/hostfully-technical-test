@@ -3,22 +3,15 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalHeader,
-  RangeCalendar,
   useDisclosure,
 } from "@nextui-org/react";
-import { memo, useState } from "react";
-import { today, getLocalTimeZone } from "@internationalized/date";
+import { memo } from "react";
+import BookForm from "./BookForm";
 import useCreateBooking from "../../hooks/useCreateBooking";
-import formatDate from "../../utils/formatDate";
 
 const BookButton = ({ propertyId }: { propertyId: string }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [value, setValue] = useState({
-    start: today(getLocalTimeZone()),
-    end: today(getLocalTimeZone()).add({ weeks: 1 }),
-  });
   const { mutate: createBooking } = useCreateBooking();
 
   return (
@@ -27,6 +20,7 @@ const BookButton = ({ propertyId }: { propertyId: string }) => {
         Book now
       </Button>
       <Modal
+        size="5xl"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         placement="top-center"
@@ -56,35 +50,17 @@ const BookButton = ({ propertyId }: { propertyId: string }) => {
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                Select what dates you would like to book
+                Please enter your information
               </ModalHeader>
               <ModalBody>
-                <RangeCalendar
-                  aria-label="Date (Controlled)"
-                  value={value}
-                  onChange={setValue}
-                />
-                <p>{`From: ${formatDate(value.start.toString())}`}</p>
-                <p>{`To: ${formatDate(value.end.toString())}`}</p>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" onPress={onClose}>
-                  Close
-                </Button>
-                <Button
-                  color="success"
-                  onPress={() => {
-                    createBooking({
-                      propertyId,
-                      startDate: value.start.toString(),
-                      endDate: value.end.toString(),
-                    });
+                <BookForm
+                  onClose={onClose}
+                  onSubmit={(data) => {
+                    createBooking({ propertyId: propertyId, ...data });
                     onClose();
                   }}
-                >
-                  Book
-                </Button>
-              </ModalFooter>
+                />
+              </ModalBody>
             </>
           )}
         </ModalContent>

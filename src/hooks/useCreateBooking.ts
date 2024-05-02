@@ -1,20 +1,17 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Booking } from "../types/Booking";
 
-interface CreateBooking {
-  propertyId: string;
-  startDate: string;
-  endDate: string;
-}
-
 const useCreateBooking = () => {
   const queryclient = useQueryClient();
 
   const createBooking = async ({
     propertyId,
+    email,
+    firstName,
+    lastName,
     startDate,
     endDate,
-  }: CreateBooking) => {
+  }: Omit<Booking, "id">) => {
     queryclient.setQueryData<Booking[]>(["bookings"], (bookings) => {
       if (!bookings) {
         return [];
@@ -27,6 +24,9 @@ const useCreateBooking = () => {
       if (!bookingExists) {
         const newBooking: Booking = {
           id: Math.random().toString(),
+          email,
+          firstName,
+          lastName,
           startDate,
           endDate,
           propertyId,

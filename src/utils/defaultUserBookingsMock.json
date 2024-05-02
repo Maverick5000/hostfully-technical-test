@@ -3,12 +3,18 @@
     {
       "id": "1",
       "propertyId": "1",
+      "email": "andre@test.com",
+      "firstName": "Andre",
+      "lastName": "Krauss",
       "startDate": "2024-04-01",
       "endDate": "2024-04-10"
     },
     {
       "id": "2",
       "propertyId": "2",
+      "email": "andre@test.com",
+      "firstName": "Andre",
+      "lastName": "Krauss",
       "startDate": "2024-05-11",
       "endDate": "2024-05-16"
     }
