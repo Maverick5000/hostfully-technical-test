@@ -1,0 +1,175 @@
+{
+  "properties": [
+    {
+      "id": "1",
+      "description": "Cozy cabin in the woods",
+      "price": 1200,
+      "country": "Canada",
+      "address": "123 Forest Rd",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/kim-lewis-casita-1675799318.jpeg?crop=0.669xw:1.00xh;0.114xw,0&resize=640:*",
+      "verified": true
+    },
+    {
+      "id": "2",
+      "description": "Modern apartment in the city",
+      "price": 1500,
+      "country": "USA",
+      "address": "456 City Center",
+      "image": "https://media.cntraveler.com/photos/61a60b14e663d9fce4b711c1/1:1/w_800,h_801,c_limit/Airbnb%2039271504.jpg",
+      "verified": true
+    },
+    {
+      "id": "3",
+      "description": "Seaside cottage with stunning views",
+      "price": 1800,
+      "country": "Australia",
+      "address": "789 Ocean Blvd",
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/200312163124-03-airbnb-fund-house-design.jpg?q=w_1600,h_1067,x_0,y_0,c_fill",
+      "verified": false
+    },
+    {
+      "id": "4",
+      "description": "Historic villa in the countryside",
+      "price": 2500,
+      "country": "Italy",
+      "address": "1 Via Rustica",
+      "image": "https://www.mashvisor.com/blog/wp-content/uploads/2019/12/House-Hacking-with-Airbnb-How-to-Live-for-Free.jpg",
+      "verified": true
+    },
+    {
+      "id": "5",
+      "description": "Mountain chalet with hot tub",
+      "price": 2000,
+      "country": "Switzerland",
+      "address": "345 Alpine Way",
+      "image": "https://news.airbnb.com/wp-content/uploads/sites/4/2018/08/10-airship-002-min.jpg",
+      "verified": true
+    },
+    {
+      "id": "6",
+      "description": "Beachfront bungalow with private beach access",
+      "price": 3000,
+      "country": "Maldives",
+      "address": "567 Beach Paradise",
+      "image": "https://tinyliving.com/wp-content/uploads/2023/06/california-rental-02.webp",
+      "verified": false
+    },
+    {
+      "id": "7",
+      "description": "Rustic farmhouse retreat",
+      "price": 1800,
+      "country": "France",
+      "address": "890 Farmhouse Lane",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/kim-lewis-casita-1675799318.jpeg?crop=0.669xw:1.00xh;0.114xw,0&resize=640:*",
+      "verified": true
+    },
+    {
+      "id": "8",
+      "description": "Elegant penthouse in the heart of the city",
+      "price": 3500,
+      "country": "Japan",
+      "address": "123 Skyline Tower",
+      "image": "https://media.houseandgarden.co.uk/photos/64cb7c1e54c3ba022255a7fd/master/w_1600%2Cc_limit/61103d29-eea0-4b3b-b9f9-fb3d8d7a1944.jpeg",
+      "verified": true
+    },
+    {
+      "id": "9",
+      "description": "Charming cottage near the vineyards",
+      "price": 1600,
+      "country": "Argentina",
+      "address": "456 Vineyard Lane",
+      "image": "https://travelfreak.com/wp-content/uploads/2020/03/airbnb-alternative.jpg",
+      "verified": false
+    },
+    {
+      "id": "10",
+      "description": "Ski-in/ski-out chalet in the Alps",
+      "price": 2800,
+      "country": "Austria",
+      "address": "789 Ski Slope Rd",
+      "image": "https://static01.nyt.com/images/2020/09/28/travel/24airbnb-future-print/oakImage-1600867693149-superJumbo.jpg",
+      "verified": true
+    },
+    {
+      "id": "11",
+      "description": "Private island paradise",
+      "price": 5000,
+      "country": "Fiji",
+      "address": "1 Island Escape",
+      "image": "https://www.stayporter.com/wp-content/uploads/2021/09/North-Scottsdale-Rentals.jpeg",
+      "verified": true
+    },
+    {
+      "id": "12",
+      "description": "Historic castle with panoramic views",
+      "price": 4000,
+      "country": "Scotland",
+      "address": "234 Castle Rd",
+      "image": "https://news.airbnb.com/wp-content/uploads/sites/4/2018/08/alt-3-underground-hygge.jpg",
+      "verified": false
+    },
+    {
+      "id": "13",
+      "description": "Luxury yacht for exclusive cruising",
+      "price": 8000,
+      "country": "Greece",
+      "address": "567 Marina Way",
+      "image": "https://treetopbuilders.net/cdn/shop/articles/green_magic_homes_by_treetop_builders.webp?v=1683304969",
+      "verified": true
+    },
+    {
+      "id": "14",
+      "description": "Safari lodge in the African savannah",
+      "price": 3000,
+      "country": "Kenya",
+      "address": "890 Savanna Trail",
+      "image": "https://a0.muscache.com/im/pictures/073c9ee3-df86-441f-a7da-e7fa1b0a8457.jpg?im_w=1920",
+      "verified": false
+    },
+    {
+      "id": "15",
+      "description": "Oceanfront villa with infinity pool",
+      "price": 6000,
+      "country": "Thailand",
+      "address": "123 Ocean View",
+      "image": "https://www.forbesindia.com/media/images/2023/Nov/img_223115_lead_guestfavorites-us-2023winterrelease_bg.jpg",
+      "verified": true
+    },
+    {
+      "id": "16",
+      "description": "Chic loft in trendy urban neighborhood",
+      "price": 2000,
+      "country": "Germany",
+      "address": "456 Loft Ave",
+      "image": "https://www.mashvisor.com/blog/wp-content/uploads/2019/12/House-Hacking-with-Airbnb-How-to-Live-for-Free.jpg",
+      "verified": true
+    },
+    {
+      "id": "17",
+      "description": "Mountain lodge with panoramic views",
+      "price": 1800,
+      "country": "Canada",
+      "address": "789 Mountain Vista",
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/200312163124-03-airbnb-fund-house-design.jpg?q=w_1600,h_1067,x_0,y_0,c_fill",
+      "verified": false
+    },
+    {
+      "id": "18",
+      "description": "Riverside retreat with fishing access",
+      "price": 1400,
+      "country": "USA",
+      "address": "1 Riverfront Way",
+      "image": "https://media.cntraveler.com/photos/61a60b14e663d9fce4b711c1/1:1/w_800,h_801,c_limit/Airbnb%2039271504.jpg",
+      "verified": true
+    },
+    {
+      "id": "19",
+      "description": "Historic mansion with gardens",
+      "price": 3000,
+      "country": "France",
+      "address": "234 Grand Estate",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/kim-lewis-casita-1675799318.jpeg?crop=0.669xw:1.00xh;0.114xw,0&resize=640:*",
+      "verified": true
+    }
+  ]
+}
